@@ -1,2 +1,2 @@
-# Android Jetpack Example: Cinema :cinema:
+# Android Jetpack Example GitHub
 
