@@ -44,21 +44,21 @@ open class NetworkModule {
             .build()
     }
 
-    @Singleton
-    @Provides
-    fun providesRepositoryApi(retrofit: Retrofit): RepoApi {
-
-    }
+//    @Singleton
+//    @Provides
+//    fun providesRepositoryApi(retrofit: Retrofit): RepoApi {
+//
+//    }
 
     @Singleton
     @Provides
     fun providesDeveloperApi(retrofit: Retrofit): DeveloperApi {
         return DeveloperApiClient(retrofit)
     }
-
-    @Singleton
-    @Provides
-    fun providesSearchApi(retrofit: Retrofit): SearchApi {
-
-    }
+//
+//    @Singleton
+//    @Provides
+//    fun providesSearchApi(retrofit: Retrofit): SearchApi {
+//
+//    }
 }

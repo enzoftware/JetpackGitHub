@@ -28,6 +28,8 @@ interface AppComponent : AndroidInjector<GithubApp> {
         @BindsInstance
         fun application(application: Application): Builder
 
+        fun networkModule(networkModule: NetworkModule): Builder
+
         fun build(): AppComponent
     }
 
