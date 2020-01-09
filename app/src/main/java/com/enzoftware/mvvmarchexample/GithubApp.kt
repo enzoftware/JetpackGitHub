@@ -1,6 +1,7 @@
 package com.enzoftware.mvvmarchexample
 
 import android.content.Context
+import com.enzoftware.mvvmarchexample.di.DaggerAppComponent
 import com.enzoftware.mvvmarchexample.di.modules.NetworkModule
 import com.jakewharton.threetenabp.AndroidThreeTen
 import dagger.android.AndroidInjector
