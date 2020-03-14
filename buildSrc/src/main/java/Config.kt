@@ -1,8 +1,8 @@
 object Config {
-    val versionName = "1.0.0"
-    val versionCode = 1
-    val packageName = "com.enzoftware.jetpackgithub"
-    val compileSdkVersion = 28
-    val targetSdkVersion = 28
-    val minSdkVersion = 26
+    const val versionName = "1.0.0"
+    const val versionCode = 1
+    const val packageName = "com.enzoftware.jetpackgithub"
+    const val compileSdkVersion = 28
+    const val targetSdkVersion = 28
+    const val minSdkVersion = 26
 }
