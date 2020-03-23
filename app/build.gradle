@@ -10,7 +10,7 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 
 
 android {
-    compileSdkVersion (Config.compileSdkVersion)
+    compileSdkVersion(Config.compileSdkVersion)
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId Config.packageName
@@ -42,6 +42,7 @@ dependencies {
     // coroutine
     implementation(Dep.coroutineCore)
     implementation(Dep.coroutineAndroid)
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation(Dep.coroutineTest)
 
     // androidx
