@@ -3,7 +3,7 @@ package com.enzoftware.mvvmarchexample.api.response
 import com.enzoftware.mvvmarchexample.model.Language
 import com.enzoftware.mvvmarchexample.model.Repository
 import com.enzoftware.mvvmarchexample.util.DataResponse
-import com.enzoftware.mvvmarchexample.util.DateFormatters
+import com.enzoftware.mvvmarchexample.util.DateFormats
 import com.google.gson.annotations.SerializedName
 import java.time.LocalDateTime
 
@@ -233,8 +233,8 @@ class RepositoryResponse : DataResponse<Repository>() {
     owner = owner?.toModel() ?: throw IllegalArgumentException("owner not found"),
     name = name ?: "",
     description = description ?: "",
-    createdAt = LocalDateTime.from(DateFormatters.ofApiResult().parse(createdAt)),
-    updatedAt = LocalDateTime.from(DateFormatters.ofApiResult().parse(updatedAt)),
+    createdAt = LocalDateTime.from(DateFormats.ofApiResult().parse(createdAt)),
+    updatedAt = LocalDateTime.from(DateFormats.ofApiResult().parse(updatedAt)),
     starsCount = stargazersCount ?: 0,
     watchersCount = watchersCount ?: 0,
     forksCount = forksCount ?: 0,

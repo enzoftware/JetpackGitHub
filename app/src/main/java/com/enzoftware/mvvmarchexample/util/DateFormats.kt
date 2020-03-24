@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter
  * Contact: lizama.enzo@gmail.com
  */
 
-object DateFormatters {
+object DateFormats {
 
     fun ofApiResult(): DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'")
 
