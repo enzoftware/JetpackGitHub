@@ -10,5 +10,4 @@ import com.enzoftware.mvvmarchexample.model.Repository
 
 interface RepoApi {
     suspend fun getRepo(owner: String, repo: String): Repository
-
 }
