@@ -46,16 +46,10 @@ open class NetworkModule {
 
     @Singleton
     @Provides
-    fun providesRepositoryApi(retrofit: Retrofit): RepoApi {
-        return RepoApiClient(retrofit)
+    fun providesRepositoryApi(retrofit: Retrofit): GithubRepositoryApi {
+        return GithubRepositoryApiClient(retrofit)
     }
 
-
-    @Singleton
-    @Provides
-    fun providesDeveloperApi(retrofit: Retrofit): DeveloperApi {
-        return DeveloperApiClient(retrofit)
-    }
 
     @Singleton
     @Provides

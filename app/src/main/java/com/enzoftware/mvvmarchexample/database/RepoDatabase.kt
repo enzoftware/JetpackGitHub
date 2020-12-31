@@ -1,6 +1,5 @@
 package com.enzoftware.mvvmarchexample.database
 
-import com.enzoftware.mvvmarchexample.model.Repository
 import com.enzoftware.mvvmarchexample.model.SimpleRepository
 
 

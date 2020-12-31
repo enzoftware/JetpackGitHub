@@ -1,8 +1,7 @@
 package com.enzoftware.mvvmarchexample.database
 
 import com.enzoftware.mvvmarchexample.database.dao.RepositoryDao
-import com.enzoftware.mvvmarchexample.database.entity.RepositoryEntity
-import com.enzoftware.mvvmarchexample.model.Repository
+import com.enzoftware.mvvmarchexample.database.entity.GithubRepositoryEntity
 import com.enzoftware.mvvmarchexample.model.SimpleRepository
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.withContext
@@ -24,13 +23,13 @@ class RepoDatabaseClient(private val repositoryDao: RepositoryDao) : RepoDatabas
 
     override suspend fun insert(repository: SimpleRepository) {
         return withContext(IO){
-            repositoryDao.insert(RepositoryEntity(repository.id, repository.name, repository.owner))
+            repositoryDao.insert(GithubRepositoryEntity(repository.id, repository.name, repository.owner))
         }
     }
 
     override suspend fun delete(repository: SimpleRepository) {
         return withContext(IO){
-            repositoryDao.delete(RepositoryEntity(repository.id, repository.name, repository.owner))
+            repositoryDao.delete(GithubRepositoryEntity(repository.id, repository.name, repository.owner))
         }
     }
 

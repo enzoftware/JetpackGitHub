@@ -1,7 +1,7 @@
 package com.enzoftware.mvvmarchexample.repository
 
 import com.enzoftware.mvvmarchexample.api.SearchApi
-import com.enzoftware.mvvmarchexample.model.Repository
+import com.enzoftware.mvvmarchexample.model.GithubRepository
 import javax.inject.Inject
 
 
@@ -13,7 +13,7 @@ class SearchRepositoriesRepository @Inject constructor(
     private val searchApi: SearchApi
 ) {
 
-    suspend fun searchRepositories(query: String): List<Repository> {
+    suspend fun searchRepositories(query: String): List<GithubRepository> {
         return searchApi.searchRepos(query)
     }
 }

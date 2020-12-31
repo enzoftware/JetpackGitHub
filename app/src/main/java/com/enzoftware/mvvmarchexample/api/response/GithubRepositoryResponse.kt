@@ -1,13 +1,13 @@
 package com.enzoftware.mvvmarchexample.api.response
 
 import com.enzoftware.mvvmarchexample.model.Language
-import com.enzoftware.mvvmarchexample.model.Repository
+import com.enzoftware.mvvmarchexample.model.GithubRepository
 import com.enzoftware.mvvmarchexample.util.DataResponse
 import com.enzoftware.mvvmarchexample.util.DateFormats
 import com.google.gson.annotations.SerializedName
 import java.time.LocalDateTime
 
-class RepositoryResponse : DataResponse<Repository>() {
+class GithubRepositoryResponse : DataResponse<GithubRepository>() {
 
   @SerializedName("id")
   var id: Int? = null
@@ -228,7 +228,7 @@ class RepositoryResponse : DataResponse<Repository>() {
   @SerializedName("score")
   var score: Double? = null
 
-  override fun toModel() = Repository(
+  override fun toModel() = GithubRepository(
     id = id ?: throw IllegalArgumentException("id not found"),
     owner = owner?.toModel() ?: throw IllegalArgumentException("owner not found"),
     name = name ?: "",

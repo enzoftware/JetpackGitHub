@@ -2,7 +2,7 @@ package com.enzoftware.mvvmarchexample.repository
 
 import com.enzoftware.mvvmarchexample.api.SearchApi
 import com.enzoftware.mvvmarchexample.model.Language
-import com.enzoftware.mvvmarchexample.model.Repository
+import com.enzoftware.mvvmarchexample.model.GithubRepository
 import java.time.LocalDateTime
 import javax.inject.Inject
 
@@ -14,7 +14,7 @@ import javax.inject.Inject
 class FeedRepository @Inject constructor(
     private val searchApi: SearchApi
 ){
-    suspend fun getTrendingRepositories(language: Language): List<Repository>{
+    suspend fun getTrendingRepositories(language: Language): List<GithubRepository>{
         return searchApi.getHotRepos(language, LocalDateTime.now().minusMonths(1))
     }
 }

@@ -2,7 +2,7 @@ package com.enzoftware.mvvmarchexample.model
 
 import java.time.LocalDateTime
 
-data class Repository(
+data class GithubRepository(
   val id: Int,
   val owner: Owner,
   val name: String,

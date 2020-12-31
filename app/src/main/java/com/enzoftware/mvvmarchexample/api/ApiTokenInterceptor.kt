@@ -16,7 +16,7 @@ class ApiTokenInterceptor : Interceptor{
     }
 
     override fun intercept(chain: Interceptor.Chain): Response {
-        val token = BuildConfig.API_KEY
+        val token = BuildConfig.GITHUB_API_TOKEN
         val builder = chain.request().newBuilder()
         if (token.isNotBlank() && token != "null"){
             builder.addHeader(AUTHORIZATION_HEADER, "token $token")

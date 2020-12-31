@@ -1,6 +1,6 @@
 package com.enzoftware.mvvmarchexample.repository
 
-import com.enzoftware.mvvmarchexample.api.RepoApi
+import com.enzoftware.mvvmarchexample.api.GithubRepositoryApi
 import com.enzoftware.mvvmarchexample.database.RepoDatabase
 import javax.inject.Inject
 
@@ -11,7 +11,7 @@ import javax.inject.Inject
  */
 class UserRepository @Inject constructor(
     private val repoDatabase: RepoDatabase,
-    private val repoApi: RepoApi
+    private val githubRepositoryApi: GithubRepositoryApi
 ) {
 
 }

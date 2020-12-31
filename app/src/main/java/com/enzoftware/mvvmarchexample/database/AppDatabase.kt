@@ -3,7 +3,7 @@ package com.enzoftware.mvvmarchexample.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.enzoftware.mvvmarchexample.database.dao.RepositoryDao
-import com.enzoftware.mvvmarchexample.database.entity.RepositoryEntity
+import com.enzoftware.mvvmarchexample.database.entity.GithubRepositoryEntity
 
 
 /**
@@ -13,7 +13,7 @@ import com.enzoftware.mvvmarchexample.database.entity.RepositoryEntity
 
 const val DATABASE_VERSION = 1
 
-@Database(entities = [RepositoryEntity::class], version = DATABASE_VERSION,  exportSchema = false)
+@Database(entities = [GithubRepositoryEntity::class], version = DATABASE_VERSION,  exportSchema = false)
 abstract class AppDatabase: RoomDatabase(){
     abstract val repositoryDao: RepositoryDao
 }

@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey
  */
 
 @Entity(tableName = "repository")
-class RepositoryEntity (
+class GithubRepositoryEntity (
     @PrimaryKey
     var id: Int,
     var name: String,

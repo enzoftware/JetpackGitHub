@@ -1,7 +1,7 @@
 package com.enzoftware.mvvmarchexample.database.dao
 
 import androidx.room.*
-import com.enzoftware.mvvmarchexample.database.entity.RepositoryEntity
+import com.enzoftware.mvvmarchexample.database.entity.GithubRepositoryEntity
 
 
 /**
@@ -12,13 +12,13 @@ import com.enzoftware.mvvmarchexample.database.entity.RepositoryEntity
 @Dao
 abstract class RepositoryDao{
     @Query("SELECT * FROM repository")
-    abstract suspend fun getAll() : List<RepositoryEntity>
+    abstract suspend fun getAll() : List<GithubRepositoryEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract suspend fun insert(repository: RepositoryEntity)
+    abstract suspend fun insert(githubRepository: GithubRepositoryEntity)
 
     @Delete
-    abstract suspend fun delete(repository: RepositoryEntity)
+    abstract suspend fun delete(githubRepository: GithubRepositoryEntity)
 
     @Query("DELETE FROM repository")
     abstract suspend fun deleteAll()

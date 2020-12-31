@@ -1,10 +1,10 @@
 package com.enzoftware.mvvmarchexample.api
 
 import com.enzoftware.mvvmarchexample.api.response.ListResponse
-import com.enzoftware.mvvmarchexample.api.response.RepositoryResponse
+import com.enzoftware.mvvmarchexample.api.response.GithubRepositoryResponse
 import com.enzoftware.mvvmarchexample.api.response.SimpleDeveloperResponse
 import com.enzoftware.mvvmarchexample.model.Language
-import com.enzoftware.mvvmarchexample.model.Repository
+import com.enzoftware.mvvmarchexample.model.GithubRepository
 import com.enzoftware.mvvmarchexample.model.SimpleDeveloper
 import com.enzoftware.mvvmarchexample.util.DateFormats
 import kotlinx.coroutines.Dispatchers.IO
@@ -26,7 +26,7 @@ class SearchApiClient(retrofit: Retrofit) : SearchApi {
         suspend fun getHotRepositories(
             @Query("q") query: String,
             @Query("sort") sort: String = "stars"
-        ): ListResponse<RepositoryResponse>
+        ): ListResponse<GithubRepositoryResponse>
 
         @GET("search/users")
         suspend fun getHotDevelopers(
@@ -37,7 +37,7 @@ class SearchApiClient(retrofit: Retrofit) : SearchApi {
         @GET("search/repositories")
         suspend fun getRepositories(
             @Query("q") query: String
-        ): ListResponse<RepositoryResponse>
+        ): ListResponse<GithubRepositoryResponse>
 
         @GET("search/users")
         suspend fun getDevelopers(
@@ -49,7 +49,7 @@ class SearchApiClient(retrofit: Retrofit) : SearchApi {
 
     private val service = retrofit.create(Service::class.java)
 
-    override suspend fun getHotRepos(language: Language, from: LocalDateTime): List<Repository> {
+    override suspend fun getHotRepos(language: Language, from: LocalDateTime): List<GithubRepository> {
         return withContext(IO) {
             service.getHotRepositories(
                     "language:${language.title} created:>${from.format(DateFormats.ofSearchQuery())}"
@@ -86,7 +86,7 @@ class SearchApiClient(retrofit: Retrofit) : SearchApi {
         }
     }
 
-    override suspend fun searchRepos(query: String): List<Repository> {
+    override suspend fun searchRepos(query: String): List<GithubRepository> {
         return withContext(IO) {
             val q = if (query.isNotBlank()) {
                 query
